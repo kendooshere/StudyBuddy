@@ -34,15 +34,16 @@
           <a class="nav-link" aria-current="page" href="./index.html">Home</a>
           <a class="nav-link" href="#">Timer</a>
           <a class="nav-link" href="#to-do">To-do</a>
-          <a class="nav-link" href="#">Resources</a>
+          <a class="nav-link" href="#resources">Resources</a>
         </div>
       </div>
     </div>
   </nav>
   <div>
-    <div class="container-fluid component" id="timer">
-      <h1 class="main-heading h1 text-wrap display-1" style="text-align: center; padding-top: 20px;">Pomodoro Timer</h1>
-      <div class="modes">
+    <div class="container-fluid" id="timer">
+      <h1 class="main-heading h1 text-wrap display-1 headings" style="text-align: center; padding-top: 20px;">Pomodoro
+        Timer</h1>
+      <div class="modes container-fluid">
         <a class="mode" href="#" data-time="1500">Pomodoro</a>
         <a class="mode" href="#" data-time="300">Short break</a>
         <a class="mode" href="#" data-time="900">Long break</a>
@@ -52,7 +53,7 @@
         <p style="text-align: center;">Click a mode to get started</p>
       </div>
 
-      <main>
+      <main class="container-fluid">
         <div class="pomodoro">
           <h1 class="pomodoro__time">00:00</h1>
         </div>
@@ -82,14 +83,40 @@
     </div>
 
   </div>
+
+  <!-- <div class="music-toggle-container">
+    <div class="music-toggle">
+      <i class="ri-music-2-line"></i>
+    </div>
   </div>
 
+  <div class="container-fluid music-player">
+    <h1 style="text-align: center;">MUSIC</h1>
+    <div class="music-img container-fluid">
+    </div>
+    <div class="track_info">
+      <div class="trackName">Track Name</div>
+      <div class="artistName">Artist Name</div>
+      <div class="current-time">00:00</div>
+      <input type="range" class="track_slider" min="1" max="100" value="0" onchange="trackSlide()">
+      <div class="total-duration">00:00
+      </div>
+    </div>
+    <div class="music-controls container-fluid">
+      <i class="ri-skip-left-fill prevtrack"></i>
+      <i class="ri-play-circle-fill playtoggle"></i>
+      <i class="ri-skip-right-fill nexttrack"></i>
+      <input type="range" min="1" max="100" value="55" onchange="volumeChange()">
+    </div>
+    <div class="volumeKnob">
+    </div>
+  </div> -->
   <!-- TO DO LIST -->
 
   <!-- <h1 class="main-heading h1 text-wrap display-1" style="text-align: center; padding-top: 20px;">To do List</h1>
   <div class="d-flex justify-content-center todomain container-fluid component" id="to-do">
     <div class="card justify-content-center" style="width: 70%;">
-    <div class="card-header brand-name">To do List</div>
+      <div class="card-header brand-name">To do List</div>
     <div class="card-body d-flex">
       <input type="text" name="to-do-query" id="to-do-query"> 
     <div class="container">
@@ -102,13 +129,63 @@
     </div>
   </div> -->
 
-  <h1 class="main-heading h1 text-wrap display-1" style="text-align: center; padding-top: 20px;" style="text-align: center;">To Do List</h1>
-  <div class="container-fluid d-flex justify-content-center component">
-    <div class="todomain container-fluid">
-          <input type="text" id="new-task" placeholder="Enter your task" class="to-do-task">
-          <button type="button" class="btn btn-success btn-lg "><i class="ri-add-circle-line"></i></button>
-          <button type="button" class="btn btn-danger btn-lg "><i class="ri-delete-bin-line"></i></button>
+  <!-- <h1 class="main-heading h1 text-wrap display-1">To Do List</h1>
+  <div class="container-fluid">
+    <div class="todomain component container-fluid">
+      <input type="text" id="new-task" placeholder="Enter your task" class="to-do-task">
+      <button type="button" class="btn btn-success btn-lg"><i class="ri-add-circle-line"></i></button>
+    </div>
+  </div> -->
 
+  <!-- Resources -->
+
+  <!-- <h1 class="main-heading h1 text-wrap display-1 headings">Resources</h1>
+  <div class="component">
+  </div> -->
+  <div class="container-fluid component" id="resources">
+    <h1 class="main-heading h1 text-wrap display-1 headings" style="text-align: center; padding-top: 20px;">Resources
+    </h1>
+    <button class="btn sem-btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-1"
+      aria-expanded="false" aria-controls="semester-1"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-1<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-1">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-2"
+      aria-expanded="false" aria-controls="semester-2"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-2<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-2">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-3"
+      aria-expanded="false" aria-controls="semester-3"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-3<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-3">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-4"
+      aria-expanded="false" aria-controls="semester-4"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-4<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-4">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-5"
+      aria-expanded="false" aria-controls="semester-5"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-5<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-5">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-6"
+      aria-expanded="false" aria-controls="semester-6"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-6<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-6">
     </div>
   </div>
 
