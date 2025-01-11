@@ -134,7 +134,7 @@ main {
   border-radius: 6px;
   padding: 1rem;
   margin-left: -6.5rem;
-  z-index: 1;
+  z-index: 2;
   transition: visibility 200ms, opacity 200ms ease-in-out;
 }
 
@@ -267,11 +267,13 @@ main {
   right: 2rem;
   padding: .5rem;
   border-radius: 2rem;
-  border: 1px solid rgba(128, 128, 128, 0.275);
+  /* border: 5px solid rgba(128, 128, 128, 0.275); */
+  border: 5px solid rgba(0, 0, 0, 0.275);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  visibility: hidden;
 }
 
 .music-toggle-container {
@@ -280,38 +282,56 @@ main {
   right: 5.5rem;
   bottom: 11rem;
   background-color: rgba(255, 166, 0, 0.761);
-  height: 2rem;
-  width: 2rem;
+  height: 5.7rem;
+  width: 5.7rem;
   border-radius: 50%;
   text-align: center;
+  cursor: pointer;
 }
 
 .music-toggle {
   padding: 0.8rem;
 }
 
-.music-img{
+.music-img {
   height: 40%;
-  width: 60%;
-  background-color: pink;
+  width: 60% ;
+  border-radius: 1rem;
+  
 }
 
-.music-controls{
+.music-controls {
   height: 30%;
   width: 80%;
-  background-color: purple;
   display: flex;
-  align-items:end;
+  align-items: end;
   justify-content: center;
   flex-wrap: wrap;
-  padding-bottom: 1rem ;
+  padding-bottom: 1rem;
 }
 
 .music-controls>i {
   font-size: 5rem;
 }
 
-.track_info{
+.track_info {
   text-align: center;
+  width: 100%;
+  font-family: "Lato", serif;
 }
 
+.song-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+input[type="range"] {
+  accent-color: #2b2828;
+  cursor: pointer;
+  outline: none;
+}
+
+.track-slider::-webkit-slider-runnable-track{
+  
+}
