@@ -1,3 +1,7 @@
+body>p {
+  font-family: "Nunito", sans-serif;
+}
+
 .oneblock {
   /* margin-top: 100px; */
   display: flex;
@@ -7,6 +11,7 @@
   height: 600px;
   width: 100%;
 }
+
 
 
 .block {
@@ -195,7 +200,7 @@
 }
 
 .box2>img {
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .name1 {
@@ -214,7 +219,7 @@
 
 }
 
-.h1{
+.h1 {
 
   font-family: var(--funnel);
   font-weight: 800;
@@ -223,30 +228,33 @@
 }
 
 .head {
-  width :80%
+  width: 80%
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   width: 24rem;
   gap: 1rem;
-  justify-content: center;margin-bottom: 5rem;
+  justify-content: center;
+  margin-bottom: 5rem;
 }
 
 input,
 select,
-textarea{
+textarea {
   padding: 1.4rem;
   background: transparent;
   border: 1px solid black;
 
 }
-textarea{
+
+textarea {
   height: 6rem;
 
 }
-button{
+
+button {
   width: 8rem;
   padding: 1.4rem;
   cursor: pointer;
@@ -254,3 +262,26 @@ button{
   color: white;
 }
 
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  transition: ease-in-out;
+}
+
+.card {
+  transition: .5s;
+}
+
+.card>img {
+  height: 10rem;
+}
+
+.card-body {
+  text-align: center;
+  height: 10rem;
+}
+
+.card-body>p {
+  font-size: 1.2rem;
+  font-family: "Nunito", serif;
+}
