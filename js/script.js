@@ -153,12 +153,6 @@ let timerUpdate;
 // Tracklist: Info regarding all tracks
 let trackList = [
 	{
-		name: "Chauffeur",
-		artist: "Diljit Dosanjh",
-		image: "https://th.bing.com/th/id/OIP.wDSiynYZJ8WTiWtjlBVsmgHaDt?w=282&h=174&c=7&r=0&o=5&pid=1.7",
-		path: "sounds/chauffeur.mp3"
-	},
-	{
 		name: "New person same old mistakes",
 		artist: "Tame Impala",
 		image: "img/currents.jpg",
