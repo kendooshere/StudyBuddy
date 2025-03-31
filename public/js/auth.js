@@ -8,19 +8,20 @@ const firebaseConfig = {
     appId: "1:965042095610:web:635dd4f0e0a48f7de55043"
 };
 
-
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
+// ✅ Initialize FirebaseUI
 const ui = new firebaseui.auth.AuthUI(auth);
 
+// ✅ FirebaseUI Config
 const uiConfig = {
-  signInSuccessUrl: "home.html", // Redirect after login
-  signInOptions: [
-    firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID
-  ]
+    signInSuccessUrl: "home.html",  // Redirect after login
+    signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ]
 };
 
-
-ui.start("#firebaseui-auth-container", uiConfig);
+// ✅ Start FirebaseUI
+ui.start("#firebase-auth-container", uiConfig);
