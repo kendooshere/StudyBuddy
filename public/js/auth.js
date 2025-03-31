@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, EmailAuthProvider } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import * as firebaseui from "https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"; // Import FirebaseUI
 
 const firebaseConfig = {
     apiKey: "AIzaSyDBXXlkRJkgrvABphpV75x02sXpHlJ2oko",
