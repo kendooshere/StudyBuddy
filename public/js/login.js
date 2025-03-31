@@ -1,6 +1,8 @@
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
 const auth = getAuth();
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
 
 document.getElementById("loginForm").addEventListener("submit", (e) => {
     e.preventDefault();
