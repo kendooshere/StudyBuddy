@@ -10,7 +10,7 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             alert("Account Created! Redirecting...");
-            window.location.href = "dashboard.html";
+            window.location.href = "index.html";
         })
         .catch((error) => alert(error.message));
 });
