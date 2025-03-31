@@ -24,7 +24,7 @@ auth.onAuthStateChanged((user) => {
 import "https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js";
 
 // Initialize FirebaseUI
-const ui = new firebaseui.auth.AuthUI(auth);
+const ui = new firebaseui.auth.AuthUI(getAuth());
 
 const uiConfig = {
     signInSuccessUrl: "home.html", // Redirect after successful login
