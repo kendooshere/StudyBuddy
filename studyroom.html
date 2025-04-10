@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyRoom</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="node_modules/remixicon/fonts/remixicon.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/studyroom.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-body-tertiary .navbar-expand{-sm|-md|-lg|-xl|-xxl}"
+    style="background-color: white;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <h1 class="brand-name" href="">StudyBuddy</h1>
+        <p class="para">The better way to prepare.</p>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav"
+        style="font-size: 20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  padding-right: 7px ;">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+          <a class="nav-link" href="about.html">About us</a>
+          <a class="nav-link" href="#timer">Timer</a>
+          <a class="nav-link" href="tasks.html">Tasks</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <div class="container-fluid" id="timer">
+      <h1 class="main-heading h1 text-wrap display-1 headings" style="text-align: center; padding-top: 20px;">Pomodoro
+        Timer</h1>
+      <div class="modes container-fluid">
+        <a class="mode" href="#" data-time="1500">Pomodoro</a>
+        <a class="mode" href="#" data-time="300">Short break</a>
+        <a class="mode" href="#" data-time="900">Long break</a>
+      </div>
+
+      <div class="get-started container-fluid">
+        <p style="text-align: center;">Click a mode to get started</p>
+      </div>
+
+      <main class="container-fluid">
+        <div class="pomodoro">
+          <h1 class="pomodoro__time">00:00</h1>
+        </div>
+      </main>
+
+      <div class="tooltip-container">
+        <article class="help__tooltip">
+          <img src="question.svg" alt="Question mark" width="44">
+          <div class="help__tooltip-content">
+            <p><i>"Pomodoro</i> is a technique used by people around the world to boost their productivity by using
+              small intervals of 25 minutes or so and 5 minute breaks in between them</p>
+            <h4>Pomodoro cycle:</h4>
+            <ol>
+              <li>Pomodoro</li>
+              <li>Short break</li>
+              <li>Pomodoro</li>
+              <li>Short break</li>
+              <li>Pomodoro</li>
+              <li>Long break</li>
+            </ol>
+            <p>Repeat!</p>
+          </div>
+        </article>
+      </div>
+      <audio src="sounds/short-alarm-clock-sound.mp3"></audio>
+      <script src="src/index.js"></script>
+    </div>
+
+  </div>
+
+  <div class="music-toggle-container">
+    <div class="music-toggle" onclick="playerToggle()">
+      <i class="ri-music-2-line" style="font-size: 3rem;"></i>
+    </div>
+  </div>
+  <div class="container-fluid music-player">
+    <i class="ri-close-circle-line" style="font-size: 3rem; cursor: pointer; padding-top: 0;"
+      onclick="playerToggle()"></i>
+    <div class="music-img container-fluid">
+    </div>
+    <div class="track_info">
+      <div class="trackName" style="font-size: 1.7rem; width: 100%; font-weight: 600;">Track Name</div>
+      <div class="artistName" style="font-size: 1.3rem;">Artist Name</div>
+      <div class="song-controls" style="display: flex;">
+        <div class="current-time" style="font-size: 1.2rem;">00:00</div>
+        <input type="range" class="track-slider slider" min="1" max="100" value="0" onchange="trackSlide()">
+        <div class="total-duration" style="font-size: 1.2rem;">00:00
+        </div>
+      </div>
+    </div>
+    <div class="music-controls container-fluid">
+      <i class="ri-skip-left-fill prevtrack" role="button" onclick="previousTrack()"></i>
+      <i class="ri-play-circle-fill playtoggle" role="button" onclick="playPauseTrack()"></i>
+      <i class="ri-skip-right-fill nexttrack" role="button" onclick="forwardTrack()"></i>
+      <div><i class="ri-volume-down-line" style="font-size: 2rem;"></i>
+        <input class="volumeKnob slider" type="range" min="0" max="100" value="50" onchange="setVolume()">
+        <i class="ri-volume-up-line" style="font-size: 2rem;"></i>
+      </div>
+
+    </div>
+  </div>
+  <div class="container-fluid component" id="resources">
+    <h1 class="main-heading h1 text-wrap display-1 headings" style="text-align: center; padding-top: 20px;">Resources
+    </h1>
+    <button class="btn sem-btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-1"
+      aria-expanded="false" aria-controls="semester-1"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-1<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-1">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-2"
+      aria-expanded="false" aria-controls="semester-2"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-2<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-2">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-3"
+      aria-expanded="false" aria-controls="semester-3"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-3<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-3">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-4"
+      aria-expanded="false" aria-controls="semester-4"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-4<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-4">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-5"
+      aria-expanded="false" aria-controls="semester-5"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel);">
+      Semester-5<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-5">
+    </div>
+    <button class="sem-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#semester-6"
+      aria-expanded="false" aria-controls="semester-6"
+      style="width:100%; font-size: 5vh; text-align:left; margin-top: 5vh; font-family:var(--funnel); margin-bottom :2rem;">
+      Semester-6<i class="ri-arrow-right-wide-line"></i>
+    </button>
+    <div class="sem-container content collapse" id="semester-6">
+    </div>
+  </div>
+  <div class="container-fluid my-footer">
+    <footer>
+      <div class="ftr"><a href="https://www.instagram.com/damnn.angad"><i class="ri-instagram-line"></i></a>
+        <a href=""><i class="ri-github-fill"></i></a>
+        <a href=""><i class="ri-twitter-x-fill"></i></a>
+      </div>
+      <div class="ftr">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">StudyRoom</a>
+      </div>
+      <div class="ftr">
+        <a href="about.html#contact">Contact Us</a>
+        <a href="https://www.gngroup.org/asset/pdf/syllabus/management/BCA.pdf">Syllabus</a>
+      </div>
+      <p class="text-wrap" style="text-align: center; margin-top: 4px; font-size: 13px;">Copyright@2025<span
+          id="year"></span>,
+        StudyBuddy. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="./js/script.js"></script>
+
+</html>
