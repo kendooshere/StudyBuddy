@@ -1,0 +1,23 @@
+Add Login/Signup supabase, To do list
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#	modified:   about.html
+#	modified:   css/studyroom.css
+#	modified:   css/style.css
+#	modified:   firebase.json
+#	modified:   firestore.indexes.json
+#	new file:   home.html
+#	modified:   index.html
+#	new file:   js/index.js
+#	deleted:    js/login.js
+#	new file:   js/logout.js
+#	modified:   js/register.js
+#	modified:   js/script.js
+#	new file:   signup.html
+#	modified:   studyroom.html
+#	modified:   tasks.html
+#
