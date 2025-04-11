@@ -152,7 +152,7 @@ let totalDuration = document.querySelector(".total-duration");
 let volumeSlider = document.querySelector(".volumeKnob");
 let trackSlider = document.querySelector(".track-slider");
 
-let trackindex = 0;
+let trackhome = 0;
 let nowPlaying = false;
 let timerUpdate;
 
@@ -185,19 +185,19 @@ let trackList = [
 
 ]
 
-function trackLoad(trackindex) {
+function trackLoad(trackhome) {
 
 	clearInterval(timerUpdate);
 	resetValues();
 
-	currentTrack.src = trackList[trackindex].path;
+	currentTrack.src = trackList[trackhome].path;
 	currentTrack.load();
 
 	// Track details being updated
-	trackArt.style.background = "url(" + trackList[trackindex].image + ")";
+	trackArt.style.background = "url(" + trackList[trackhome].image + ")";
 	trackArt.style.backgroundSize = "cover";
-	trackTitle.textContent = trackList[trackindex].name;
-	trackArtist.textContent = trackList[trackindex].artist;
+	trackTitle.textContent = trackList[trackhome].name;
+	trackArtist.textContent = trackList[trackhome].artist;
 
 	timerUpdate = setInterval(seekUpdate, 500);
 
@@ -242,21 +242,21 @@ function pauseTrack() {
 }
 
 function forwardTrack() {
-	if (trackindex < trackList.length - 1) {
-		trackindex += 1;
+	if (trackhome < trackList.length - 1) {
+		trackhome += 1;
 	}
-	else { trackindex = 0; }
-	trackLoad(trackindex);
+	else { trackhome = 0; }
+	trackLoad(trackhome);
 	playTrack();
 }
 
 function previousTrack() {
-	if (trackindex > 0) {
-		trackindex -= 1;
+	if (trackhome > 0) {
+		trackhome -= 1;
 	}
-	else { trackindex = trackList.length - 1; }
+	else { trackhome = trackList.length - 1; }
 
-	trackLoad(trackindex);
+	trackLoad(trackhome);
 	playTrack();
 }
 
@@ -291,7 +291,7 @@ function seekUpdate() {
 	totalDuration.textContent = durationMinutes + ":" + durationSeconds;
 }
 
-trackLoad(trackindex);
+trackLoad(trackhome);
 
 //Music player toggle
 

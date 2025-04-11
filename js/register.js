@@ -1,31 +1,32 @@
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const supabase = createClient(
+  "https://vjfiueixqczquxynbdiz.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZml1ZWl4cWN6cXV4eW5iZGl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNTg3MjEsImV4cCI6MjA1OTgzNDcyMX0.4EQM6tmnY96wgfuQw5rXNjOGyTwpVxJBPbuAmQNwb6c"
+);
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDBXXlkRJkgrvABphpV75x02sXpHlJ2oko",
-  authDomain: "studybuddy-51261.firebaseapp.com",
-  projectId: "studybuddy-51261",
-  storageBucket: "studybuddy-51261.firebasestorage.app",
-  messagingSenderId: "965042095610",
-  appId: "1:965042095610:web:635dd4f0e0a48f7de55043"
-};
-let email = document.getElementById("email");
-let password = document.getElementById("password");
-let signUpButton = document.getElementById("signUp");
+document.getElementById("signup-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
+  const email = document.getElementById("signup-email").value;
+  const password = document.getElementById("signup-password").value;
+  const errorBox = document.getElementById("signup-error");
 
-firebase.initializeApp(firebaseConfig);
-
-signUpButton.addEventListener("click", function() {
-    // Sign up the user using Firebase's createUserWithEmailAndPassword method
-    firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
-      .then(function() {
-        // Redirect the user to the protected resources page
-        window.location.href = "/protected-resources.html";
-      })
-      .catch(function(error) {
-        // Show an error message
-        alert(error.message);
-      });
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password
   });
+
+  if (error) {
+    errorBox.textContent = error.message;
+    errorBox.style.display = "block";
+  } else {
+    console.log("Signed up:", data);
+    window.location.href = "index.html"; // Redirect to login after signup
+  }
+});
+
+document.getElementById("logout-btn").addEventListener("click", async () => {
+  await supabase.auth.signOut();
+  window.location.href = "index.html";
+});

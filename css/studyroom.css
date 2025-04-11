@@ -109,7 +109,7 @@ main {
   position: fixed;
   bottom: 2.5rem;
   right: 5.5rem;
-  z-index: 1;
+  z-home: 1;
 }
 
 .help__tooltip {
@@ -134,7 +134,7 @@ main {
   border-radius: 6px;
   padding: 1rem;
   margin-left: -6.5rem;
-  z-index: 2;
+  z-home: 2;
   transition: visibility 200ms, opacity 200ms ease-in-out;
 }
 
@@ -259,7 +259,7 @@ main {
 }
 
 .music-player {
-  z-index: 1;
+  z-home: 1;
   position: fixed;
   height: 40rem;
   width: 28rem;
@@ -277,7 +277,7 @@ main {
 }
 
 .music-toggle-container {
-  z-index: 1;
+  z-home: 1;
   position: fixed;
   right: 5.5rem;
   bottom: 11rem;
